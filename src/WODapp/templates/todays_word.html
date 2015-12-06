@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'words_style.css' %}" />
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title> TEST </title>
 </head>
 <body>
-<h1>English</h1>
+<div id="container">
+  <div id="en"><h1>English</h1>
         {% for word in english_words %}
             <p> {{ word.word_text }}</p>
-        {% endfor %}
-
-<h1>Japanese</h1>
+        {% endfor %}</div>
+  <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
             <p> {{ word.word_text }}</p>
-        {% endfor %}
+        {% endfor %}</div>
+</div>
 </body>
 </html>
