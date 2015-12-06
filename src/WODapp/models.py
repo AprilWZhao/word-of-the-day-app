@@ -4,10 +4,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Language(models.Model):
-    language_text = models.CharField(max_length=50)
+    language_text = models.CharField(max_length=20)
 
     def __unicode__(self):
         return u'%s'%self.language_text
+
 
 class Word(models.Model):
     language_id = models.ForeignKey(Language, on_delete=models.CASCADE)
@@ -31,18 +32,20 @@ class Word(models.Model):
     def __unicode__(self):
         return u'%s'%self.word_text
 
+
 class Comment(models.Model):
     body = models.TextField(blank=True)
     word_id = models.ForeignKey(Word, on_delete=models.CASCADE)
-    posted_by = models.ForeignKey(User,default='guest')
+    posted_by = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return u'%s'%self.body
 
-class Favored(models.Model):
+
+class Favorite(models.Model):
     user_id = models.ForeignKey(User)
     word_id = models.ForeignKey(Word,on_delete=models.CASCADE)
 
     def __unicode__(self):
-        return u'%s'%self.body
+        return u'%s'%self.user_id

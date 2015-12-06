@@ -4,7 +4,9 @@ from django.contrib import admin
 from .models import Language
 from .models import Word
 from .models import Comment
+from .models import Favorite
 
 admin.site.register(Word)
 admin.site.register(Language)
 admin.site.register(Comment)
+admin.site.register(Favorite)
