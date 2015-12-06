@@ -5,6 +5,14 @@
     <title> TEST </title>
 </head>
 <body>
-test
+<h1>English</h1>
+        {% for word in english_words %}
+            <p> {{ word.word_text }}</p>
+        {% endfor %}
+
+<h1>Japanese</h1>
+        {% for word in japanese_words %}
+            <p> {{ word.word_text }}</p>
+        {% endfor %}
 </body>
 </html>
