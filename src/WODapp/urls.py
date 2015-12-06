@@ -21,5 +21,5 @@ from views import TodaysWordView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TodaysWordsView as_view(), name='Todays Words'),
+    url(r'^$', TodaysWordView.as_view(), name="Todays Words"),
 ]
