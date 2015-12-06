@@ -13,10 +13,20 @@
         {% for word in english_words %}
             <p> {{ word.word_text }}</p>
         {% endfor %}</div>
+    <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create"/>
+    </form>
   <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
             <p> {{ word.word_text }}</p>
         {% endfor %}</div>
+    <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create"/>
+    </form>
 </div>
 </body>
 </html>
