@@ -18,7 +18,6 @@ from django.conf.urls import url
 from django.contrib import admin
 from WODapp.views import TodaysWordView
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TodaysWordView.as_view(), name="Todays Words"),
