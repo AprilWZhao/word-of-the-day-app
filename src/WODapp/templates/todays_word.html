@@ -12,21 +12,24 @@
   <div id="en"><h1>English</h1>
         {% for word in english_words %}
             <p> {{ word.word_text }}</p>
-        {% endfor %}</div>
+        {% endfor %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Create"/>
+        <input id="comment_box_en" type="test" value="{{word}}"/>
+            <input type="submit" value="Comment"/>
     </form>
+  </div>
   <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
             <p> {{ word.word_text }}</p>
-        {% endfor %}</div>
+        {% endfor %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Create"/>
+            <input id="comment_box_jp" type="test" value="{{word}}"/>
+            <input type="submit" value="Comment"/>
     </form>
+  </div>
 </div>
 </body>
 </html>

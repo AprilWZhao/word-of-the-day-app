@@ -12,23 +12,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
-
-AD_DNS_NAME = 'mcp.com'
-# If using non-SSL use these
-#AD_LDAP_PORT=389
-#AD_LDAP_URL='ldap://%s:%s' % (AD_DNS_NAME,AD_LDAP_PORT)
-# If using SSL use these:
-AD_LDAP_PORT = 636
-AD_LDAP_URL = 'ldaps://%s:%s' % (AD_DNS_NAME,AD_LDAP_PORT)
-AD_SEARCH_DN = 'dc=mygroup,dc=net,dc=com'
-AD_NT4_DOMAIN = 'YOURDOMAIN'
-AD_SEARCH_FIELDS = ['mail', 'givenName', 'sn', 'sAMAccountName',' memberOf']
-AD_MEMBERSHIP_REQ = ['Group_Required', 'Alternative_Group']
-AD_CERT_FILE = '/path/to/your/cert.txt'
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
-AD_DEBUG = True
-AD_DEBUG_FILE = '/path/to/writable/log/file/ldap.debug'
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -74,7 +57,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        #'DIRS' : [os.path.join(BASE_DIR, 'WODapp','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
