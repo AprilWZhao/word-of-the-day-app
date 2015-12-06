@@ -40,3 +40,9 @@ class Comment(models.Model):
     def __unicode__(self):
         return u'%s'%self.body
 
+class Favored(models.Model):
+    user_id = models.ForeignKey(User)
+    word_id = models.ForeignKey(Word,on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return u'%s'%self.body
