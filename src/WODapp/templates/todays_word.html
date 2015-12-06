@@ -12,6 +12,16 @@
   <div id="en"><h1>English</h1>
         {% for word in english_words %}
             <p> {{ word.word_text }}</p>
+            <p> {{ word.part_of_speech1 }}</p>
+            <p> {{ word.meaning1}}</p>
+            <p> {{ word.sentence1 }}</p>
+            {% for comment in comments %}
+                {% if comment.word_id == word  %}
+                    <p> {{ comment.body }} </p>
+                    <p> {{ comment.posted_by }} </p>
+                {% endif %}
+            {% endfor %}
+
         {% endfor %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
@@ -23,6 +33,15 @@
   <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
             <p> {{ word.word_text }}</p>
+            <p> {{ word.part_of_speech1 }}</p>
+            <p> {{ word.meaning1}}</p>
+            <p> {{ word.sentence1 }}</p>
+            {% for comment in comments %}
+                {% if comment.word_id == word  %}
+                    <p> {{ comment.body }} </p>
+                    <p> {{ comment.posted_by }} </p>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}

@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from models import Word
+from models import Word,Comment
 from forms import AddCommentForm
 
 
@@ -12,4 +12,5 @@ class TodaysWordView(TemplateView):
         context = super(TodaysWordView, self).get_context_data(**kwargs)
         context['english_words'] = Word.objects.filter(language_id__language_text="English")
         context['japanese_words'] = Word.objects.filter(language_id__language_text="Japanese")
+        context['comments'] = Comment.objects.all()
         return context
