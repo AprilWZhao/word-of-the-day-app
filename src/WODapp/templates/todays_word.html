@@ -26,12 +26,15 @@
                 {% endif %}
             {% endfor %}
         {% endfor %}
+
+      {% comment %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
             {{ form.as_p }}
         <input id="comment_box_en" type="test" value="{{word}}"/>
             <input type="submit" value="Comment"/>
     </form>
+      {% endcomment %}
   </div>
   <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
@@ -51,11 +54,13 @@
             {% endfor %}
         {% endfor %}
 
+      {% comment %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
             <input id="comment_box_jp" type="test" value="{{word}}"/>
             <input type="submit" value="Comment"/>
     </form>
+      {% endcomment %}
   </div>
 </div>
 </body>
