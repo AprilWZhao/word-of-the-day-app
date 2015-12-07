@@ -6,3 +6,15 @@ width:500px;
 float:right;
 width:500px;
 }
+
+#cmnt {
+margin-left: 0px;
+margin-right:100px;
+background-color: #C9E6D8;
+}
+
+#wrd {
+font-size:22px;
+background-color:#EFE87A;
+line-height: 110%;
+}

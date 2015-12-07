@@ -11,17 +11,20 @@
 <div id="container">
   <div id="en"><h1>English</h1>
         {% for word in english_words %}
-            <p> {{ word.word_text }}</p>
+            <div id="wrd"><strong><p> {{ word.word_text }} </p></strong></div>
             <p> {{ word.part_of_speech1 }}</p>
-            <p> {{ word.meaning1}}</p>
-            <p> {{ word.sentence1 }}</p>
+            <strong>Meaning:</strong><p> {{ word.meaning1}}</p>
+            <strong>Example:</strong> <p> {{ word.sentence1 }}</p>
+            <strong>Comments:</strong>
             {% for comment in comments %}
                 {% if comment.word_id == word  %}
+            <div id="cmnt">
+
                     <p> {{ comment.body }} </p>
-                    <p> {{ comment.posted_by }} </p>
+                    posted by: {{ comment.posted_by }} on {{ comment.created }}
+            </div>
                 {% endif %}
             {% endfor %}
-
         {% endfor %}
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
@@ -32,17 +35,22 @@
   </div>
   <div id="jp"><h1>Japanese</h1>
         {% for word in japanese_words %}
-            <p> {{ word.word_text }}</p>
+            <div id="wrd"><strong> <p> {{ word.word_text }}</p> </strong></div>
             <p> {{ word.part_of_speech1 }}</p>
-            <p> {{ word.meaning1}}</p>
-            <p> {{ word.sentence1 }}</p>
+            <strong>Meaning:</strong><p> {{ word.meaning1}}</p>
+            <strong>Example:</strong> <p> {{ word.sentence1 }}</p>
+            <strong>Comments:</strong>
             {% for comment in comments %}
                 {% if comment.word_id == word  %}
+            <div id="cmnt">
+
                     <p> {{ comment.body }} </p>
-                    <p> {{ comment.posted_by }} </p>
+                    posted by: {{ comment.posted_by }} on {{ comment.created }}
+            </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
+
     <form action="" method="post" class="form-horizontal">
             {% csrf_token %}
             <input id="comment_box_jp" type="test" value="{{word}}"/>
